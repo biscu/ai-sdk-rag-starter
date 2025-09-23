@@ -20,9 +20,15 @@ export async function POST(req: Request) {
     model: openai('gpt-4o'),
     messages: convertToModelMessages(messages),
     stopWhen: stepCountIs(5),
-    system: `You are a helpful assistant. Check your knowledge base before answering any questions.
-    Only respond to questions using information from tool calls.
-    if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
+    system: `You are a helpful assistant with access to a knowledge base about tone of voice and writing guidelines.
+    
+    When answering questions:
+    1. First, search the knowledge base using the getInformation tool
+    2. If relevant information is found, use it to provide a helpful response
+    3. If asked question not related to ux copy, writing or tone of voice, don't use general knowledge but simply answer that you can only answer question related to copy and tone of voice.
+    4. If you don't have the answer to the question, you can directly contact Caroline Persson (UX Writer) for more information.
+    
+    Always be helpful and professional in your responses.`,
     tools: {
       addResource: tool({
         description: `add a resource to your knowledge base.
