@@ -17,33 +17,41 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: openai('gpt-4o', {
+      temperature: 0.3, // Lower temperature for more focused and deterministic responses
+      topP: 0.9, // Controls diversity of responses
+      frequencyPenalty: 0.5, // Reduces repetition
+      presencePenalty: 0.5, // Encourages more diverse topics
+      maxTokens: 1000, // Limit response length
+    }),
     messages: convertToModelMessages(messages),
     stopWhen: stepCountIs(5),
-    system: `You are a helpful assistant with access to a knowledge base about tone of voice and writing guidelines.
+    system: `You are a helpful assistant specialized in UX copywriting and tone of voice guidelines.
     
-    When answering questions:
-    1. First, search the knowledge base using the getInformation tool
-    2. If relevant information is found, use it to provide a helpful response
-    3. If asked question not related to ux copy, writing or tone of voice, don't use general knowledge but simply answer that you can only answer question related to copy and tone of voice.
-    4. If you don't have the answer to the question, you can directly contact Caroline Persson (UX Writer) for more information.
+    RULES:
+    1. Always check the knowledge base using the getInformation tool before responding
+    2. If the knowledge base contains relevant information, use it to provide a concise, accurate response
+    3. If no relevant information is found, respond with: "I couldn't find specific information about this in our guidelines. Would you like me to connect you with the UX writing team for more details?"
+    4. Only answer questions related to UX copy, writing, or tone of voice
+    5. Be professional, clear, and concise in your responses
+    6. If the user asks about something outside your knowledge domain, politely explain that you specialize in UX writing topics
     
-    Always be helpful and professional in your responses.`,
+    RESPONSE FORMAT:
+    - Use bullet points for lists
+    - Keep responses focused and to the point
+    - Reference specific guidelines when possible`,
     tools: {
       addResource: tool({
-        description: `add a resource to your knowledge base.
-          If the user provides a random piece of knowledge unprompted, use this tool without asking for confirmation.`,
+        description: `Add a new resource to the knowledge base. Only use this when explicitly asked to add new information.`,
         inputSchema: z.object({
-          content: z
-            .string()
-            .describe('the content or resource to add to the knowledge base'),
+          content: z.string().describe('The content to add to the knowledge base')
         }),
         execute: async ({ content }) => createResource({ content }),
       }),
       getInformation: tool({
-        description: `get information from your knowledge base to answer questions.`,
+        description: `Search the knowledge base for relevant information. Always use this before answering questions.`,
         inputSchema: z.object({
-          question: z.string().describe('the users question'),
+          question: z.string().describe('The user\'s question to search for')
         }),
         execute: async ({ question }) => findRelevantContent(question),
       }),
