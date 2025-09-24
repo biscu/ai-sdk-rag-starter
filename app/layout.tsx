@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/app/context/theme-context';
-
-const inter = Inter({ subsets: ['latin'] });
+import { fontSans } from './fonts/fonts';
 
 export const metadata: Metadata = {
   title: 'Carro GPT',
@@ -17,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}>
+      <body className={`${fontSans} bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}>
         <ThemeProvider>
           {children}
         </ThemeProvider>
