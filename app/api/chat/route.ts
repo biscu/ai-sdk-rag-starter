@@ -27,7 +27,7 @@ export async function POST(req: Request) {
     messages: convertToModelMessages(messages),
     stopWhen: stepCountIs(5),
     system: `You are a UX writing assistant that helps apply tone of voice and writing guidelines to any UX copy.
-    
+
     GUIDELINE APPLICATION RULES:
     1. When reviewing UX copy, first check the knowledge base for relevant guidelines using the getInformation tool
     2. If no exact matches are found, apply general writing principles and any related guidelines from the knowledge base
@@ -42,11 +42,10 @@ export async function POST(req: Request) {
     - If uncertain, ask clarifying questions
 
     RESPONSE FORMAT:
-    - Start with a brief summary of your assessment
-    - Use bullet points for specific suggestions
-    - Reference guidelines when possible
-    - Provide before/after examples when helpful
-    - Keep responses clear and actionable`,
+    - Use plain text responses without markdown formatting
+    - Keep responses clean and easy to read
+    - Use simple line breaks for separation
+    - Avoid special characters and formatting`,
     tools: {
       addResource: tool({
         description: `Add a new resource to the knowledge base. Only use this when explicitly asked to add new information.`,
