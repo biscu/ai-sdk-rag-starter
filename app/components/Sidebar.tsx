@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FileText } from 'lucide-react';
+import { ThemeToggle } from './theme-toggle';
 
 const GUIDELINES = [
   { name: 'Basics', path: '/guidelines/basics' },
@@ -9,27 +10,32 @@ const GUIDELINES = [
 
 export default function Sidebar() {
   return (
-    <div className="fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200 p-6 overflow-y-auto">
-      <Link href="/" className="block">
-        <h1 className="text-xl font-bold mb-6 hover:text-blue-600 transition-colors">Carro GPT</h1>
-      </Link>
+    <div className="fixed left-0 top-0 h-full w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-6 overflow-y-auto">
+      <div className="flex justify-between items-center mb-6">
+        <Link href="/" className="block">
+          <h1 className="text-xl font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            Carro GPT
+          </h1>
+        </Link>
+        <ThemeToggle />
+      </div>
       
       <div className="space-y-6">
         <div>
-          <h2 className="font-semibold text-gray-800 mb-2">About This Project</h2>
-          <p className="text-sm text-gray-600 mb-4">
+          <h2 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">About This Project</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
             This AI assistant helps with UX copywriting by providing style-consistent suggestions and answers based on the provided knowledge base.
           </p>
         </div>
 
         <div>
-          <h3 className="font-medium text-gray-700 mb-3">Style Guidelines</h3>
+          <h3 className="font-medium text-gray-700 dark:text-gray-300 mb-3">Style Guidelines</h3>
           <nav className="space-y-2">
             {GUIDELINES.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
-                className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 p-2 rounded-md transition-colors"
+                className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-md transition-colors"
               >
                 <FileText className="h-4 w-4" />
                 <span>{item.name}</span>
@@ -38,7 +44,7 @@ export default function Sidebar() {
           </nav>
         </div>
 
-        <div className="pt-4 border-t border-gray-100 text-xs text-gray-500">
+        <div className="pt-4 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-500 dark:text-gray-400">
           <p>Built with Next.js and AI SDK</p>
           <p className="mt-1"> {new Date().getFullYear()} UX Copy Assistant</p>
         </div>
