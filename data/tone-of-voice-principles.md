@@ -2,7 +2,7 @@
 
 Trustworthy, uncomplicated and friendly.
 
-Our tone-of-voice principles are the sum of our voice. By following these 
+Our tone of voice principles are the sum of our voice. By following these 
 principles, we build the desired experience of our brand.
 
 ## Our tone is trustworthy
