@@ -43,11 +43,6 @@ export default function Sidebar() {
             ))}
           </nav>
         </div>
-
-        <div className="pt-4 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-500 dark:text-gray-400">
-          <p>Built with Next.js and AI SDK</p>
-          <p className="mt-1"> {new Date().getFullYear()} UX Copy Assistant</p>
-        </div>
       </div>
     </div>
   );

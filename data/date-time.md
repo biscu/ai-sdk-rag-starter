@@ -24,10 +24,10 @@ To keep things uncomplicated, we follow the date and time standard of the Europe
 
 ## Don't use ordinal numbers (1st, 2nd, 3rd, etc.) in dates
 
-✅ **Do**
+**Do**
 - 23 October
 
-❌ **Don't**
+**Don't**
 - 23rd October, April 1st, March 2nd
 
 ## For deliveries, use today, tomorrow and then start naming days (on/på)

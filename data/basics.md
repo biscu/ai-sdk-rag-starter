@@ -2,8 +2,6 @@
 
 At PostNord we use American English. In our corporate language but also in our communication with customers in our digital services. See below for some common differences between the two.
 
-## ✅ Do | ❌ Don't
-
 | Do | Don't |
 |---|---|
 | Color | Colour |
@@ -24,8 +22,6 @@ When buying postage for the US and the Nordic countries we write:
 
 In active voice, the subject of the sentence does the action. In passive voice, the subject of the sentence has the action done to it. Active voice is usually clearer, more direct, and easier to read than passive voice. And it's almost always shorter.
 
-### ✅ Do | ❌ Don't
-
 **English**
 
 | Do | Don't |
@@ -43,8 +39,6 @@ In active voice, the subject of the sentence does the action. In passive voice, 
 # Passive voice
 
 Sometimes active voice can come across too harshly. When it feels like you're about to blame the user, for example in errors, warnings, or notifications, use passive voice. Passive voice can also be used to confirm the action done by someone.
-
-## ✅ Do | ❌ Don't
 
 **English**
 
@@ -68,8 +62,6 @@ Sometimes active voice can come across too harshly. When it feels like you're ab
 # Contractions
 
 Contractions suit our friendly and uncomplicated tone, but to also be perceived as trustworthy, we're not using the weird ones. The goal is to sound human, so avoid contracting verbs that sound awkward when you say them out loud.
-
-## ✅ Do | ❌ Don't
 
 | Do | Don't |
 |---|---|
@@ -152,8 +144,6 @@ Every word should have a clear purpose and give value to the user. If it's not �
 • ~~I appen kan du~~ spåra dina paket i appen
 
 ## Use sentence fragments
-
-### ✅ Do | ❌ Don't
 
 **English**
 
