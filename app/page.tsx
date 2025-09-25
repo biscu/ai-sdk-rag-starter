@@ -62,9 +62,21 @@ export default function Chat() {
                       }`}
                     >
                       <div className="whitespace-pre-wrap">
-                        {m.parts.map((part, index) => (
-                          <span key={index}>{part.text}</span>
-                        ))}
+                        {m.parts.map((part, index) => {
+                          // Handle different types of message parts
+                          if ('text' in part) {
+                            return <span key={index}>{part.text}</span>;
+                          } else if (part.type === 'dynamic-tool') {
+                            // Handle tool call parts
+                            return (
+                              <div key={index} className="text-sm text-gray-500 dark:text-gray-400">
+                                [Tool call: {part.toolName}]
+                              </div>
+                            );
+                          }
+                          // Fallback for any other part types
+                          return null;
+                        })}
                       </div>
                     </div>
                   </div>

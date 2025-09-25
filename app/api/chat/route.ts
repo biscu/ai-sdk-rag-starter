@@ -17,13 +17,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o', {
-      temperature: 0.3, // Lower temperature for more focused and deterministic responses
-      topP: 0.9, // Controls diversity of responses
-      frequencyPenalty: 0.5, // Reduces repetition
-      presencePenalty: 0.5, // Encourages more diverse topics
-      maxTokens: 1000, // Limit response length
-    }),
+    model: openai.chat('gpt-4',),
     messages: convertToModelMessages(messages),
     stopWhen: stepCountIs(5),
     system: `You are a UX writing assistant at PostNord, helping to apply our tone of voice and writing guidelines to any UX copy.
