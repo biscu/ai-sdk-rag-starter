@@ -3,14 +3,17 @@ import { FileText } from 'lucide-react';
 import { ThemeToggle } from './theme-toggle';
 
 const GUIDELINES = [
+  { name: 'Writing Principles', path: '/guidelines/writing-principles' },
   { name: 'Basics', path: '/guidelines/basics' },
   { name: 'Date & Time', path: '/guidelines/date-time' },
   { name: 'Tone of Voice', path: '/guidelines/tone-of-voice-principles' },
+  { name: 'Inclusive Language', path: '/guidelines/inclusive-language' },
+  { name: 'Numbers and Currencies', path: '/guidelines/numbers-currencies' },
 ];
 
 export default function Sidebar() {
   return (
-    <div className="fixed left-0 top-0 h-full w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-6 overflow-y-auto">
+    <div className="fixed left-0 top-0 h-full w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-6 overflow-y-auto">
       <div className="flex justify-between items-center mb-6">
         <Link href="/" className="block">
           <h1 className="text-xl font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
