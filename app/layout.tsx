@@ -15,10 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${fontSans} bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}>
-        <ThemeProvider>
+      <body className={`${fontSans} bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100`}>
+        {/* <ThemeProvider> */}
           {children}
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );

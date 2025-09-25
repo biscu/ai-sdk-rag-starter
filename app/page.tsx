@@ -26,7 +26,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="flex min-h-screen bg-white dark:bg-gray-900">
+    <div className="flex min-h-screen bg-white dark:bg-neutral-900">
       <Sidebar />
       <div className="flex-1 pl-64 flex flex-col h-screen overflow-hidden">
         {/* Messages container with scrolling */}
@@ -38,7 +38,7 @@ export default function Chat() {
             {!hasMessages ? (
               <div className="h-full flex items-center justify-center py-12">
                 <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 mx-auto">
+                  <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-neutral-700/50 flex items-center justify-center mb-4 mx-auto">
                     <MessageCircle className="h-8 w-8 text-blue-500 dark:text-blue-400" />
                   </div>
                   <h2 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">Welcome to Carro GPT</h2>
@@ -58,7 +58,7 @@ export default function Chat() {
                       className={`max-w-[80%] p-4 rounded-lg ${
                         m.role === 'user' 
                           ? 'bg-blue-500 text-white' 
-                          : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100'
+                          : 'bg-white dark:bg-neutral-700 border border-gray-200 dark:border-neutral-600 text-gray-800 dark:text-gray-100'
                       }`}
                     >
                       <div className="whitespace-pre-wrap">
@@ -84,7 +84,7 @@ export default function Chat() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your message..."
-                className="flex-1 px-6 py-4 border border-gray-300 dark:border-gray-600 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+                className="flex-1 px-6 py-4 border border-gray-300 dark:border-neutral-600 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-neutral-700 dark:text-white dark:placeholder-gray-400"
               />
               <button
                 type="submit"

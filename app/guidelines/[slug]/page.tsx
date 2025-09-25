@@ -20,7 +20,7 @@ const components = {
   ),
   th: ({ node, ...props }: { node: any }) => (
     <th 
-      className="px-4 py-3 text-left text-sm font-medium text-gray-600 dark:text-gray-300 uppercase tracking-wider bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700"
+      className="px-4 py-3 text-left text-sm font-medium text-gray-600 dark:text-gray-300 uppercase tracking-wider bg-gray-50 dark:bg-neutral-800 border-b border-gray-200 dark:border-neutral-600"
       {...props}
     />
   ),
@@ -33,13 +33,13 @@ const components = {
   code: ({ node, inline, className, children, ...props }: any) => {
     if (inline) {
       return (
-        <code className="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono text-gray-800 dark:text-gray-200">
+        <code className="bg-gray-100 dark:bg-neutral-900 px-1.5 py-0.5 rounded text-sm font-mono text-gray-800 dark:text-gray-200">
           {children}
         </code>
       );
     }
     return (
-      <pre className="bg-gray-900 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto my-4 border border-gray-800 dark:border-gray-700">
+      <pre className="bg-gray-900 dark:bg-neutral-900 p-4 rounded-lg overflow-x-auto my-4 border border-gray-800 dark:border-neutral-600">
         <code className="text-gray-100 text-sm" {...props}>
           {children}
         </code>
@@ -111,8 +111,8 @@ export default function GuidelinePage({ params }: PageProps) {
         prose-a:text-blue-600 dark:prose-a:text-blue-400 hover:prose-a:text-blue-800 dark:hover:prose-a:text-blue-300 prose-a:no-underline hover:prose-a:underline
         prose-blockquote:border-l-4 prose-blockquote:border-gray-300 dark:prose-blockquote:border-gray-600 prose-blockquote:pl-4 prose-blockquote:my-6
         prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
-        prose-pre:bg-gray-900 dark:prose-pre:bg-gray-800 prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:border prose-pre:border-gray-800 dark:prose-pre:border-gray-700
-        prose-th:px-4 prose-th:py-3 prose-th:bg-gray-50 dark:prose-th:bg-gray-800/50 prose-th:border-b prose-th:border-gray-200 dark:prose-th:border-gray-700
+        prose-pre:bg-gray-900 dark:prose-pre:bg-neutral-800 prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:border prose-pre:border-gray-800 dark:prose-pre:border-neutral-600
+        prose-th:px-4 prose-th:py-3 prose-th:bg-gray-50 dark:prose-th:bg-neutral-800 prose-th:border-b prose-th:border-gray-200 dark:prose-th:border-neutral-600
         prose-td:px-4 prose-td:py-3 prose-td:border-b prose-td:border-gray-200 dark:prose-td:border-gray-700
       ">
         {data.title && <h1 className="dark:text-white">{data.title}</h1>}
