@@ -38,8 +38,8 @@ export default function Chat() {
             {!hasMessages ? (
               <div className="h-full flex items-center justify-center py-12">
                 <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-neutral-700/50 flex items-center justify-center mb-4 mx-auto">
-                    <MessageCircle className="h-8 w-8 text-blue-500 dark:text-blue-400" />
+                  <div className="p-8 flex items-center justify-center mb-4 mx-auto">
+                    <img src="/typewriter.svg" alt="" />
                   </div>
                   <h2 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">Welcome to Carro GPT</h2>
                   <p className="mt-2 text-gray-600 dark:text-gray-300 text-center max-w-md mx-auto">
