@@ -1,13 +1,13 @@
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChatContext } from '@/app/context/chat-context';
 import { useState, useRef, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
-import { MessageCircle, Sparkles } from 'lucide-react';
 
 export default function Chat() {
   const [input, setInput] = useState('');
-  const { messages, sendMessage } = useChat();
+  const { messages, sendMessage } = useChatContext();
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const hasMessages = messages.length > 0;
@@ -62,15 +62,15 @@ export default function Chat() {
                       }`}
                     >
                       <div className="whitespace-pre-wrap">
-                        {m.parts.map((part, index) => {
+                        {m.parts.map((part: any, index: any) => {
                           // Handle different types of message parts
                           if ('text' in part) {
                             return <span key={index}>{part.text}</span>;
-                          } else if (part.type === 'dynamic-tool') {
+                          } else if ((part as any).type === 'dynamic-tool') {
                             // Handle tool call parts
                             return (
                               <div key={index} className="text-sm text-gray-500 dark:text-gray-400">
-                                [Tool call: {part.toolName}]
+                                [Tool call: {(part as any).toolName}]
                               </div>
                             );
                           }
