@@ -9,6 +9,7 @@ type ChatContextValue = {
   messages: any[];
   sendMessage: (input: { text: string }) => Promise<void>;
   reset: () => void;
+  status: 'submitted' | 'streaming' | 'ready' | 'error';
 };
 
 const ChatContext = createContext<ChatContextValue | null>(null);
@@ -28,7 +29,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  const { messages, sendMessage, setMessages } = useChat({
+  const { messages, sendMessage, setMessages, status } = useChat({
     id: 'main-chat',
     messages: initialMessages,
   });
@@ -46,7 +47,8 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     messages,
     sendMessage,
     reset: () => setMessages([]),
-  }), [messages, sendMessage, setMessages]);
+    status,
+  }), [messages, sendMessage, setMessages, status]);
 
   return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
 }
