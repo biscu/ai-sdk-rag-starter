@@ -1,4 +1,4 @@
-# 🇺🇸 We use American English
+# We use American English
 
 At PostNord we use American English. In our corporate language but also in our communication with customers in our digital services. See below for some common differences between the two.
 
@@ -163,6 +163,6 @@ Every word should have a clear purpose and give value to the user. If it's not �
 | Så fungerar Portokoder | Det är så här Portokoder fungerar |
 | Behövs det fler etiketter? | Behöver du fler etiketter? |
 
-### 💡 Tip
+### Tip
 
 "In titles, headlines and body copy, use **your, their, a, the** and similar **connecting words** to keep it conversational. You can skip them for buttons, labels and confirmations since space is usually limited."

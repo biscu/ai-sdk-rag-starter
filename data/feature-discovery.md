@@ -10,7 +10,7 @@ When something new as Dark Mode was introduced, we needed to **educate** the use
 
 ## Do vs Don't Examples
 
-### ✅ Do
+### Do
 
 #### English
 **Dark mode is here**
@@ -22,7 +22,7 @@ Many of you requested the app in darker colours and the wait is now over. Turn d
 
 Många av er har önskat att få appen i mörkare färger och väntan är nu över. Slå på eller av mörkt läge under "Utseende" på fliken "Profil." Hoppas ni gillar det.
 
-### ❌ Don't
+### Don't
 
 #### English
 **The PostNord app can now viewed in darker colors**
@@ -40,7 +40,7 @@ Användare har länge frågat efter dark mode och äntligen har vi byggt det åt
 
 Letting someone else pick up your parcel is a feature in many steps, and it was important to **educate users in the benefits before explaining the process**. First understand what's in it for me and then how to achieve it.
 
-### ✅ Do
+### Do
 
 #### English
 **Let someone else pick up your parcel**
@@ -56,7 +56,7 @@ Du behöver identifiera med BankID innan du ber någon annan hämta ut ditt pake
 
 När du har delat ditt paket kan vem som helst med länken hjälpa dig att hämta ut ditt paket.
 
-### ❌ Don't
+### Don't
 
 #### English
 **Identify with BankID**

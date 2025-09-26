@@ -31,7 +31,7 @@ Enter a valid email address, like name@example.com
 **Terms and Conditions**  
 ☐ I accept the Terms and Conditions
 
-⚠️ You must accept the Terms and Conditions before submitting
+You must accept the Terms and Conditions before submitting
 
 ### Swedish
 
@@ -54,4 +54,4 @@ Skriv en giltig mejladress, som t.ex. namn@exempel.com
 **Terms and Conditions**  
 ☐ Jag godkänner villkoren för PostNords webbplatser och appar
 
-⚠️ Du måste godkänna villkoren för PostNords integritetspolicy innan du skickar in din förfrågan.
+Du måste godkänna villkoren för PostNords integritetspolicy innan du skickar in din förfrågan.

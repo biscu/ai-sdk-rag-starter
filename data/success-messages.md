@@ -12,10 +12,9 @@ Then the user add or edit something in a step or two this is often confirmed in 
 - Don't forget punctuation when it's a full sentence.
 
 ### Examples
+`Receiver Kim Andersson was deleted.`
 
-✅ `Receiver Kim Andersson was deleted.`
-
-✅ `The changes were saved.`
+`The changes were saved.`
 
 ## After a bigger decision
 

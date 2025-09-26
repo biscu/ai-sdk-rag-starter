@@ -2,7 +2,7 @@
 
 To describe how to find or do something as a user, you need to refer to the user interface (UI). This guide explains how to do that.
 
-## ✅ Use capitalization
+## Use capitalization
 
 When you're **referring to a specific term or name somewhere in the UI**, for example in a menu, capitalize the word as it appears there.
 

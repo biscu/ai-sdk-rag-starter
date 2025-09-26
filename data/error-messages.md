@@ -54,4 +54,4 @@ Request access by clicking the button below or contact our support if you need a
 
 Unfortunately, we were unable to load the content. This may be due to connection issues. Try reloading again using the button below.
 
-`Try again 🔄`
+`Try again`
