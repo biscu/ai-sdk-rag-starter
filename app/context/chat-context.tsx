@@ -14,16 +14,19 @@ type ChatContextValue = {
 const ChatContext = createContext<ChatContextValue | null>(null);
 
 export function ChatProvider({ children }: { children: React.ReactNode }) {
-  // Load any saved messages from localStorage only once on the client
-  const [initialMessages] = useState<any[]>(() => {
-    if (typeof window === 'undefined') return [];
+  // Start with empty messages to ensure server-client consistency
+  const [initialMessages, setInitialMessages] = useState<any[]>([]);
+  
+  // Load messages from localStorage only on the client side after mount
+  useEffect(() => {
     try {
       const raw = window.localStorage.getItem(CHAT_STORAGE_KEY);
-      return raw ? JSON.parse(raw) : [];
+      const savedMessages = raw ? JSON.parse(raw) : [];
+      setInitialMessages(savedMessages);
     } catch {
-      return [];
+      // ignore storage errors
     }
-  });
+  }, []);
 
   const { messages, sendMessage, setMessages } = useChat({
     id: 'main-chat',
