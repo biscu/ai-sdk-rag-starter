@@ -27,8 +27,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
 
   const { messages, sendMessage, setMessages } = useChat({
     id: 'main-chat',
-    api: '/api/chat',
-    initialMessages,
+    messages: initialMessages,
   });
 
   // Persist to localStorage when messages change

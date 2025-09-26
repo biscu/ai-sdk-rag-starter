@@ -62,7 +62,7 @@ export default function Chat() {
                       }`}
                     >
                       <div className="whitespace-pre-wrap">
-                        {m.parts.map((part, index) => {
+                        {m.parts.map((part: any, index: any) => {
                           // Handle different types of message parts
                           if ('text' in part) {
                             return <span key={index}>{part.text}</span>;
