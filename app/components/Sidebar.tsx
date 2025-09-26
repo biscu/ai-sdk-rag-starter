@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { FileText } from 'lucide-react';
-import { ThemeToggle } from './theme-toggle';
 
 const GUIDELINES = [
   { name: 'Writing Principles', path: '/guidelines/writing-principles' },
