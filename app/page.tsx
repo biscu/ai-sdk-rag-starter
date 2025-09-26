@@ -26,7 +26,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="flex min-h-screen bg-white dark:bg-neutral-900">
+    <div className="flex min-h-screen bg-white">
       <Sidebar />
       <div className="flex-1 pl-64 flex flex-col h-screen overflow-hidden">
         {/* Messages container with scrolling */}
@@ -41,8 +41,8 @@ export default function Chat() {
                   <div className="p-8 flex items-center justify-center mb-4 mx-auto">
                     <img src="/typewriter.svg" alt="" />
                   </div>
-                  <h2 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">Welcome to Carro GPT</h2>
-                  <p className="mt-2 text-gray-600 dark:text-gray-300 text-center max-w-md mx-auto">
+                  <h2 className="mt-4 text-2xl font-bold text-gray-900">Welcome to Carro GPT</h2>
+                  <p className="mt-2 text-gray-600 text-center max-w-md mx-auto">
                     Start a conversation by typing a message below. I'm here to help you with any questions you might have regarding UX copywriting.
                   </p>
                 </div>
@@ -58,7 +58,7 @@ export default function Chat() {
                       className={`max-w-[80%] p-4 rounded-lg ${
                         m.role === 'user' 
                           ? 'bg-[#0D234B] text-white' 
-                          : 'bg-white dark:bg-neutral-700 border border-gray-200 dark:border-neutral-600 text-gray-800 dark:text-gray-100'
+                          : 'bg-white border border-gray-200 text-gray-800'
                       }`}
                     >
                       <div className="whitespace-pre-wrap">
@@ -69,7 +69,7 @@ export default function Chat() {
                           } else if (part.type === 'dynamic-tool') {
                             // Handle tool call parts
                             return (
-                              <div key={index} className="text-sm text-gray-500 dark:text-gray-400">
+                              <div key={index} className="text-sm text-gray-500">
                                 [Tool call: {part.toolName}]
                               </div>
                             );
@@ -96,11 +96,11 @@ export default function Chat() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your message..."
-                className="flex-1 px-6 py-4 border border-gray-300 dark:border-neutral-600 rounded-full transition-all duration-200 ease-in-out outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-[#0D234B] focus-visible:ring-offset-0 dark:bg-neutral-700 dark:text-white dark:placeholder-gray-400"
+                className="flex-1 px-6 py-4 border border-gray-300 rounded-full transition-all duration-200 ease-in-out outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-[#0D234B] focus-visible:ring-offset-0"
               />
               <button
                 type="submit"
-                className="bg-[#0D234B] hover:bg-[#0D234B]/90 text-white p-3 rounded-full transition-all duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D234B] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-800 flex items-center justify-center"
+                className="bg-[#0D234B] hover:bg-[#0D234B]/90 text-white p-3 rounded-full transition-all duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D234B] focus-visible:ring-offset-2 flex items-center justify-center"
                 aria-label="Send message"
               >
                 <svg width="24" height="25" viewBox="0 0 24 25" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="text-white">
