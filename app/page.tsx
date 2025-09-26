@@ -3,10 +3,11 @@
 import { useChatContext } from '@/app/context/chat-context';
 import { useState, useRef, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
+import Thinking from './components/Thinking';
 
 export default function Chat() {
   const [input, setInput] = useState('');
-  const { messages, sendMessage } = useChatContext();
+  const { messages, sendMessage, status } = useChatContext();
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
@@ -24,6 +25,9 @@ export default function Chat() {
       setInput('');
     }
   };
+
+  // Show Thinking component only when status is 'submitted' (not when streaming)
+  const showThinking = status === 'submitted';
 
   return (
     <div className="flex min-h-screen bg-white">
@@ -81,6 +85,10 @@ export default function Chat() {
                     </div>
                   </div>
                 ))}
+                
+                {/* Thinking component - shows only when submitted but not yet streaming */}
+                <Thinking isVisible={showThinking} />
+                
                 <div ref={messagesEndRef} />
               </div>
             )}
@@ -97,11 +105,13 @@ export default function Chat() {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your message..."
                 className="flex-1 px-6 py-4 border border-gray-300 rounded-full transition-all duration-200 ease-in-out outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-[#0D234B] focus-visible:ring-offset-0"
+                disabled={status === 'submitted' || status === 'streaming'}
               />
               <button
                 type="submit"
-                className="bg-[#0D234B] hover:bg-[#0D234B]/90 text-white p-3 rounded-full transition-all duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D234B] focus-visible:ring-offset-2 flex items-center justify-center"
+                className="bg-[#0D234B] hover:bg-[#0D234B]/90 text-white p-3 rounded-full transition-all duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D234B] focus-visible:ring-offset-2 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="Send message"
+                disabled={status === 'submitted' || status === 'streaming'}
               >
                 <svg width="24" height="25" viewBox="0 0 24 25" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="text-white">
                   <path fillRule="evenodd" clipRule="evenodd" d="M21 12.3677C21.0008 12.757 20.7756 13.1114 20.4229 13.276L5.42286 20.276C5.01109 20.4682 4.52152 20.3585 4.23102 20.0091C3.94052 19.6597 3.92212 19.1583 4.18624 18.7886L8.77107 12.3698L7.31124 10.326C6.99023 9.87662 7.09432 9.25207 7.54374 8.93106C7.99315 8.61006 8.6177 8.71415 8.93871 9.16356L10.8137 11.7886C11.0621 12.1363 11.0621 12.6033 10.8137 12.951L8.02568 16.8543L17.6245 12.3748L6.58092 7.27777C6.07946 7.04633 5.86058 6.4522 6.09201 5.95075C6.32345 5.4493 6.91758 5.23041 7.41903 5.46185L20.419 11.4618C20.7725 11.625 20.9991 11.9784 21 12.3677ZM4.99996 4.36981C5.55224 4.3698 5.99996 4.8175 5.99997 5.36979L5.99997 5.37979C5.99998 5.93207 5.55228 6.3798 4.99999 6.37981C4.44771 6.37982 3.99998 5.93211 3.99997 5.37982L3.99997 5.36982C3.99996 4.81754 4.44767 4.36982 4.99996 4.36981Z" fill="currentColor"/>
